@@ -11,7 +11,7 @@ class Conrad < Formula
     prefix.install jar
     (bin+"conrad").write <<-EOS.undent
       #!/bin/bash
-      exec java -cp #{prefix}/#{jar} pdex.conrad.Fetch "$@"
+      exec java -cp #{prefix}/#{jar} -Dconfig.file=conrad.conf pdex.conrad.Fetch "$@"
     EOS
   end
 
